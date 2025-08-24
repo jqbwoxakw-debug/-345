@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة النور للتنظيف</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+    body {
+        background: #f0f8ff;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* فقاعات الخلفية */
+    .bubble {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(173,216,230,0.4);
+        animation: rise 10s linear infinite;
+    }
+
+    @keyframes rise {
+        0% { transform: translateY(100vh) scale(0.5); }
+        100% { transform: translateY(-10vh) scale(1); }
+    }
+
+    header {
+        background: #00aaff;
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    header h1 { cursor: pointer; }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .container { padding: 20px; max-width: 1200px; margin:auto; }
+
+    /* خدماتنا */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top:20px; }
+    .service-box { background: #ffcc00; color:#333; padding:20px; border-radius:15px; text-align:center; font-weight:bold; font-size:1.2em; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+    /* الأسعار */
+    .prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top:20px; }
+    .price-box { padding:20px; border-radius:15px; font-weight:bold; text-align:center; font-size:1.2em; color:white; }
+    .price-box:nth-child(1){ background:#ff6666; }
+    .price-box:nth-child(2){ background:#66ccff; }
+    .price-box:nth-child(3){ background:#66ff66; }
+    .price-box:nth-child(4){ background:#ff99ff; }
+    .price-box:nth-child(5){ background:#ff9966; }
+    .price-box:nth-child(6){ background:#cc66ff; }
+
+    /* تواصل معنا */
+    .contact-box { background: #00cc66; color:white; text-align:center; padding:30px; font-size:2em; border-radius:15px; margin-top:20px; }
+
+    /* المقال */
+    .article-box {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin-top: 30px;
+    }
+    .article-box h2 { margin-bottom: 15px; color:#00aaff; }
+    .article-box p { line-height:1.6; font-size:1.1em; }
+
+    /* الفيديوهات */
+    .video-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-top:25px; }
+    .video-list iframe { width:100%; height:300px; border-radius:10px; }
+
+    @media(max-width:768px){
+        .services { grid-template-columns: 1fr 1fr; }
+        .prices { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:500px){
+        .services, .prices { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body>
+
+<!-- فقاعات الخلفية -->
+<div id="bubbles-container"></div>
+
+<header>
+    <h1 onclick="window.scrollTo({top:0, behavior:'smooth'})">شركة النور</h1>
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#prices">الأسعار</a>
+        <a href="#contact">تواصل معنا</a>
+        <a href="#article">عن الشركة</a>
+        <a href="#videos">فيديوهاتنا</a>
+    </nav>
+</header>
+
+<div class="container" id="home">
+    <h2>مرحبًا بكم في شركة النور لتنظيف المنازل</h2>
+    <p>نقدم أفضل خدمات التنظيف بجودة عالية وبأحدث الأدوات لضمان نظافة كاملة لمنزلك.</p>
+
+    <!-- خدماتنا -->
+    <h3 id="services">خدماتنا</h3>
+    <div class="services">
+        <div class="service-box">تنظيف الغرف</div>
+        <div class="service-box">تنظيف المطابخ</div>
+        <div class="service-box">تنظيف الحمامات</div>
+        <div class="service-box">تنظيف الأرضيات</div>
+        <div class="service-box">تنظيف النوافذ</div>
+        <div class="service-box">تنظيف المفروشات</div>
+    </div>
+
+    <!-- الأسعار -->
+    <h3 id="prices">الأسعار</h3>
+    <div class="prices">
+        <div class="price-box">تنظيف الغرف: 150 ريال</div>
+        <div class="price-box">تنظيف المطابخ: 200 ريال</div>
+        <div class="price-box">تنظيف الحمامات: 100 ريال</div>
+        <div class="price-box">تنظيف الأرضيات: 120 ريال</div>
+        <div class="price-box">تنظيف النوافذ: 80 ريال</div>
+        <div class="price-box">تنظيف المفروشات: 250 ريال</div>
+    </div>
+
+    <!-- تواصل معنا -->
+    <h3 id="contact">تواصل معنا</h3>
+    <div class="contact-box">
+        01280382925
+    </div>
+
+    <!-- المقال -->
+    <div class="article-box" id="article">
+        <h2>عن الشركة</h2>
+        <p>
+        شركة النور متخصصة في خدمات التنظيف بجودة عالية، مع فريق مدرب على أعلى مستوى لضمان نظافة منزلك أو مكتبك بشكل كامل. نستخدم أدوات حديثة ومواد تنظيف آمنة لضمان صحة جميع أفراد الأسرة. هدفنا هو توفير بيئة نظيفة وصحية لك ولعائلتك مع الالتزام بالمواعيد والأسعار المناسبة.
+        </p>
+        <p>
+        نقدم مجموعة متنوعة من الخدمات مثل تنظيف الغرف، المطابخ، الحمامات، الأرضيات، النوافذ والمفروشات. نحن نعتني بكل التفاصيل الصغيرة لضمان أفضل نتيجة ممكنة. خدماتنا مرنة ويمكن تعديلها حسب احتياجات العميل.
+        </p>
+    </div>
+
+    <!-- الفيديوهات -->
+    <h3 id="videos">فيديوهاتنا</h3>
+    <div class="video-list"><iframe width="560" height="315" src="https://www.youtube.com/embed/tV6pmQA1rGs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/1fVdU91ajec" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+<script>
+    // فقاعات الخلفية
+    const container = document.getElementById('bubbles-container');
+    for(let i=0;i<20;i++){
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        const size = Math.random()*60 + 20;
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        bubble.style.left = Math.random()*100 + 'vw';
+        bubble.style.animationDuration = (5+Math.random()*10) + 's';
+        bubble.style.opacity = Math.random()*0.5+0.3;
+        container.appendChild(bubble);
+    }
+</script>
+
+</body>
+</html>
